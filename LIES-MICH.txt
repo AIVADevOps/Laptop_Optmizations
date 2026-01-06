@@ -1,0 +1,163 @@
+================================================================================
+              ULTRA AKKU-OPTIMIERUNG v2.1 - Windows 11
+================================================================================
+                    Lenovo IdeaPad Slim 5 (AMD Ryzen 7)
+                         50+ TWEAKS - 1-2h mehr Akku!
+================================================================================
+
+DATEIEN:
+--------
+1. Admin-Tweaks.bat       = Alle 50+ Optimierungen anwenden (Doppelklick)
+2. Alles-Rueckgaengig.bat = Alles zuruecksetzen (Doppelklick)
+3. LIES-MICH.txt          = Diese Datei
+4. Ultimate-Tweaks.ps1    = PowerShell Script (wird automatisch aufgerufen)
+5. Revert-Tweaks.ps1      = Revert Script (wird automatisch aufgerufen)
+
+
+WAS WIRD OPTIMIERT (45+ TWEAKS):
+================================
+
+[KATEGORIE 1] Services deaktiviert (13):
+----------------------------------------
+- DiagTrack (Diagnostics Tracking)
+- SysMain (Superfetch)
+- WSearch (Windows Search Indexer)
+- PcaSvc (Program Compatibility)
+- CDPUserSvc (Connected Devices Platform) - spart 15-20% CPU!
+- dmwappushservice (WAP Push)
+- MapsBroker (Maps Manager)
+- lfsvc (Geolocation)
+- WMPNetworkSvc (Media Player Sharing)
+- Xbox Services (Auth, GameSave, Networking, Accessories)
+- BITS auf Manual
+
+[KATEGORIE 2] Registry Tweaks (10):
+-----------------------------------
+- Fast Startup AUS
+- Telemetrie AUS
+- Sleep Study AUS
+- App Compatibility Inventory AUS
+- Cortana AUS
+- Xbox GameDVR AUS
+- Game Bar Recording AUS
+- Bing Search im Startmenu AUS
+- Search Indexing Energie-Modus AN
+- Processor Boost Mode freigeschaltet
+
+[KATEGORIE 3] Scheduled Tasks deaktiviert (7):
+----------------------------------------------
+- Customer Experience Consolidator
+- USB CEIP
+- Microsoft Compatibility Appraiser
+- ProgramDataUpdater
+- DiskDiagnosticDataCollector
+- Autochk Proxy
+- Power Efficiency Diagnostics
+
+[KATEGORIE 4] Power Settings (4):
+---------------------------------
+- Processor Boost AUS (auf Batterie)
+- USB Selective Suspend AN
+- PCIe Link State Maximum Power Saving
+- WLAN Maximum Power Saving
+
+[KATEGORIE 5] Modern Standby & Netzwerk (NEU - 3):
+--------------------------------------------------
+- Network in Standby AUS (verhindert Sleep-Drain!)
+- Delivery Optimization Service AUS (spart 20GB RAM!)
+- DoSvc Service komplett deaktiviert
+
+[KATEGORIE 6] Startup & Background (NEU - 4):
+---------------------------------------------
+- Startup Delay = 0 (schnellerer Boot)
+- Background Apps Global AUS
+- Background App Toggle AUS
+- AppPrivacy: Background Apps = Deny
+
+[KATEGORIE 7] Notifications & UI (NEU - 2):
+-------------------------------------------
+- Notification Center AUS (keine Popup-Wakeups)
+- Animations AUS (CPU/GPU sparen)
+- (Transparency bleibt AN - User Preference)
+
+[KATEGORIE 8] Windows Update Control (NEU - 3):
+-----------------------------------------------
+- Auto-Update auf "Notify Only"
+- wuauserv auf Manual
+- UsoSvc auf Manual
+
+[KATEGORIE 9] Zusaetzliche Services (NEU - 13):
+-----------------------------------------------
+- WaaSMedicSvc (Update Medic) -> Manual
+- InstallService (Store Install) -> Manual
+- TokenBroker (Web Account) -> Manual
+- wisvc (Windows Insider) -> Disabled
+- RetailDemo -> Disabled
+- MessagingService -> Disabled
+- PhoneSvc -> Disabled
+- TabletInputService (Touch Keyboard) -> Disabled
+- Fax Service -> Disabled
+- WerSvc (Windows Error Reporting) -> Disabled
+- TermService (Remote Desktop) -> Disabled
+- RemoteRegistry -> Disabled
+- RemoteAccess -> Disabled
+
+[KATEGORIE 10] Power Advanced (NEU - 5):
+----------------------------------------
+- Hibernate aktiviert (kein Standby-Drain!)
+- Lid Close = Hibernate
+- Sleep nach 5 Min
+- Hibernate nach 10 Min
+- Display aus nach 2 Min
+- Wake Timers AUS
+
+[EXTRA] Antigravity IDE:
+------------------------
+- Hardware Acceleration AUS (GPU schlaeft)
+- Datei: C:\Users\abtel\.antigravity\argv.json
+
+
+MANUELLE SCHRITTE (Lenovo Vantage):
+===================================
+1. Lenovo Vantage oeffnen
+2. "Conservation Mode" AUS (fuer volle Ladekapazitaet)
+3. Thermal Mode auf "Battery Saving" oder "Quiet" (Fn + Q)
+
+
+SCHNELLE BEFEHLE (PowerShell als Admin):
+========================================
+
+CPU auf 100%:
+  powercfg /setdcvalueindex SCHEME_CURRENT SUB_PROCESSOR PROCTHROTTLEMAX 100
+  powercfg /setactive SCHEME_CURRENT
+
+CPU auf 75%:
+  powercfg /setdcvalueindex SCHEME_CURRENT SUB_PROCESSOR PROCTHROTTLEMAX 75
+  powercfg /setactive SCHEME_CURRENT
+
+CPU auf 50%:
+  powercfg /setdcvalueindex SCHEME_CURRENT SUB_PROCESSOR PROCTHROTTLEMAX 50
+  powercfg /setactive SCHEME_CURRENT
+
+Turbo Boost AN:
+  powercfg /setdcvalueindex SCHEME_CURRENT SUB_PROCESSOR PERFBOOSTMODE 2
+  powercfg /setactive SCHEME_CURRENT
+
+Turbo Boost AUS:
+  powercfg /setdcvalueindex SCHEME_CURRENT SUB_PROCESSOR PERFBOOSTMODE 0
+  powercfg /setactive SCHEME_CURRENT
+
+
+QUELLEN:
+========
+- NinjaOne: Disable Modern Standby
+- Win11Debloat (GitHub)
+- Tom's Guide: Delivery Optimization RAM
+- XDA: 7 Services to Disable
+- MakeUseOf: Disable Windows Services
+- WindowsClub: Disable Cortana/Telemetry
+- Overclock.net: Ryzen Power Plans
+
+
+ERSTELLT: 04.01.2026 | VERSION 2.1
+================================================================================
